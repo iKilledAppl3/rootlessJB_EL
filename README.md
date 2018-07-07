@@ -1,4 +1,4 @@
-#UI changes by @ikilledappl3 :P 
+# UI changes by @ikilledappl3 :P 
 ---------------------------------------------------------------------
 I decided to fork this project no only to fix the UI up a bit but to learn how it was made!
 This jailbreak is pretty intricate so really no need for introductions there.
