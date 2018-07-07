@@ -35,6 +35,15 @@
 		B060B7E720BC0624001FD0CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B060B7E620BC0624001FD0CE /* Assets.xcassets */; };
 		B060B7EA20BC0624001FD0CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B060B7E820BC0624001FD0CE /* LaunchScreen.storyboard */; };
 		B060B7ED20BC0624001FD0CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B060B7EC20BC0624001FD0CE /* main.m */; };
+		D8E87C9420F003CC0076BE4D /* rootlessJBSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E87C9320F003CC0076BE4D /* rootlessJBSettingsController.m */; };
+		D8E87CDB20F008490076BE4D /* SCLAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E87CCB20F008490076BE4D /* SCLAlertView.m */; };
+		D8E87CDC20F008490076BE4D /* SCLAlertViewResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E87CCD20F008490076BE4D /* SCLAlertViewResponder.m */; };
+		D8E87CDD20F008490076BE4D /* SCLAlertViewStyleKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E87CCF20F008490076BE4D /* SCLAlertViewStyleKit.m */; };
+		D8E87CDE20F008490076BE4D /* SCLButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E87CD120F008490076BE4D /* SCLButton.m */; };
+		D8E87CDF20F008490076BE4D /* SCLSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E87CD420F008490076BE4D /* SCLSwitchView.m */; };
+		D8E87CE020F008490076BE4D /* SCLTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E87CD620F008490076BE4D /* SCLTextView.m */; };
+		D8E87CE120F008490076BE4D /* SCLTimerDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E87CD820F008490076BE4D /* SCLTimerDisplay.m */; };
+		D8E87CE220F008490076BE4D /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E87CDA20F008490076BE4D /* UIImage+ImageEffects.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +105,25 @@
 		B060B7E920BC0624001FD0CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B060B7EB20BC0624001FD0CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B060B7EC20BC0624001FD0CE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D8E87C9220F003CC0076BE4D /* rootlessJBSettingsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rootlessJBSettingsController.h; sourceTree = "<group>"; };
+		D8E87C9320F003CC0076BE4D /* rootlessJBSettingsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = rootlessJBSettingsController.m; sourceTree = "<group>"; };
+		D8E87CCA20F008490076BE4D /* SCLAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLAlertView.h; sourceTree = "<group>"; };
+		D8E87CCB20F008490076BE4D /* SCLAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLAlertView.m; sourceTree = "<group>"; };
+		D8E87CCC20F008490076BE4D /* SCLAlertViewResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLAlertViewResponder.h; sourceTree = "<group>"; };
+		D8E87CCD20F008490076BE4D /* SCLAlertViewResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLAlertViewResponder.m; sourceTree = "<group>"; };
+		D8E87CCE20F008490076BE4D /* SCLAlertViewStyleKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLAlertViewStyleKit.h; sourceTree = "<group>"; };
+		D8E87CCF20F008490076BE4D /* SCLAlertViewStyleKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLAlertViewStyleKit.m; sourceTree = "<group>"; };
+		D8E87CD020F008490076BE4D /* SCLButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLButton.h; sourceTree = "<group>"; };
+		D8E87CD120F008490076BE4D /* SCLButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLButton.m; sourceTree = "<group>"; };
+		D8E87CD220F008490076BE4D /* SCLMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLMacros.h; sourceTree = "<group>"; };
+		D8E87CD320F008490076BE4D /* SCLSwitchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLSwitchView.h; sourceTree = "<group>"; };
+		D8E87CD420F008490076BE4D /* SCLSwitchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLSwitchView.m; sourceTree = "<group>"; };
+		D8E87CD520F008490076BE4D /* SCLTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLTextView.h; sourceTree = "<group>"; };
+		D8E87CD620F008490076BE4D /* SCLTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLTextView.m; sourceTree = "<group>"; };
+		D8E87CD720F008490076BE4D /* SCLTimerDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLTimerDisplay.h; sourceTree = "<group>"; };
+		D8E87CD820F008490076BE4D /* SCLTimerDisplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLTimerDisplay.m; sourceTree = "<group>"; };
+		D8E87CD920F008490076BE4D /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		D8E87CDA20F008490076BE4D /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +217,7 @@
 				8258AE8820D3EC7C00AB9BC0 /* dylibs */,
 				B060B7DC20BC0624001FD0CE /* empty_list */,
 				B060B7DB20BC0624001FD0CE /* Products */,
+				D8E87CC920F008490076BE4D /* SCLAlertView */,
 				827C01DE20CBF40D00CD7A63 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -210,6 +239,8 @@
 				B060B7E020BC0624001FD0CE /* ViewController.h */,
 				B060B7E120BC0624001FD0CE /* ViewController.m */,
 				B060B7E320BC0624001FD0CE /* Main.storyboard */,
+				D8E87C9220F003CC0076BE4D /* rootlessJBSettingsController.h */,
+				D8E87C9320F003CC0076BE4D /* rootlessJBSettingsController.m */,
 				B060B7E620BC0624001FD0CE /* Assets.xcassets */,
 				B060B7E820BC0624001FD0CE /* LaunchScreen.storyboard */,
 				B060B7EB20BC0624001FD0CE /* Info.plist */,
@@ -222,6 +253,31 @@
 				B00730BF20C730BC005995FA /* README */,
 			);
 			path = empty_list;
+			sourceTree = "<group>";
+		};
+		D8E87CC920F008490076BE4D /* SCLAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				D8E87CCA20F008490076BE4D /* SCLAlertView.h */,
+				D8E87CCB20F008490076BE4D /* SCLAlertView.m */,
+				D8E87CCC20F008490076BE4D /* SCLAlertViewResponder.h */,
+				D8E87CCD20F008490076BE4D /* SCLAlertViewResponder.m */,
+				D8E87CCE20F008490076BE4D /* SCLAlertViewStyleKit.h */,
+				D8E87CCF20F008490076BE4D /* SCLAlertViewStyleKit.m */,
+				D8E87CD020F008490076BE4D /* SCLButton.h */,
+				D8E87CD120F008490076BE4D /* SCLButton.m */,
+				D8E87CD220F008490076BE4D /* SCLMacros.h */,
+				D8E87CD320F008490076BE4D /* SCLSwitchView.h */,
+				D8E87CD420F008490076BE4D /* SCLSwitchView.m */,
+				D8E87CD520F008490076BE4D /* SCLTextView.h */,
+				D8E87CD620F008490076BE4D /* SCLTextView.m */,
+				D8E87CD720F008490076BE4D /* SCLTimerDisplay.h */,
+				D8E87CD820F008490076BE4D /* SCLTimerDisplay.m */,
+				D8E87CD920F008490076BE4D /* UIImage+ImageEffects.h */,
+				D8E87CDA20F008490076BE4D /* UIImage+ImageEffects.m */,
+			);
+			name = SCLAlertView;
+			path = empty_list/SCLAlertView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +314,7 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Multipath = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -307,18 +363,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				82FA9AAA20D2E24600AFBE92 /* jelbrek.m in Sources */,
+				D8E87CDC20F008490076BE4D /* SCLAlertViewResponder.m in Sources */,
 				82FA9AAC20D2E24600AFBE92 /* kexecute.c in Sources */,
+				D8E87CDF20F008490076BE4D /* SCLSwitchView.m in Sources */,
 				82FA9AB120D2E24600AFBE92 /* shell.c in Sources */,
 				B030E1F620BC0864000CDD4C /* sploit.c in Sources */,
+				D8E87CE220F008490076BE4D /* UIImage+ImageEffects.m in Sources */,
 				8258AE7E20D3BF0600AB9BC0 /* osobject.c in Sources */,
 				B060B7E220BC0624001FD0CE /* ViewController.m in Sources */,
 				82FA9AAF20D2E24600AFBE92 /* patchfinder64.m in Sources */,
+				D8E87C9420F003CC0076BE4D /* rootlessJBSettingsController.m in Sources */,
 				B060B7ED20BC0624001FD0CE /* main.m in Sources */,
 				B00730BC20C723AE005995FA /* offsets.m in Sources */,
 				B060B7DF20BC0624001FD0CE /* AppDelegate.m in Sources */,
+				D8E87CE120F008490076BE4D /* SCLTimerDisplay.m in Sources */,
 				82724E5920D2EF20005D0EC2 /* inject_criticald.m in Sources */,
+				D8E87CDE20F008490076BE4D /* SCLButton.m in Sources */,
+				D8E87CE020F008490076BE4D /* SCLTextView.m in Sources */,
 				82FA9AAB20D2E24600AFBE92 /* kern_utils.m in Sources */,
 				82FA9ABB20D2E38400AFBE92 /* unlocknvram.c in Sources */,
+				D8E87CDD20F008490076BE4D /* SCLAlertViewStyleKit.m in Sources */,
+				D8E87CDB20F008490076BE4D /* SCLAlertView.m in Sources */,
 				82FA9AAE20D2E24600AFBE92 /* offsetof.c in Sources */,
 				827D23B920EAD4D40081EDED /* bootstrap.m in Sources */,
 				82FA9AB820D2E37900AFBE92 /* remap_tfp_set_hsp.c in Sources */,
@@ -457,7 +522,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H39QW49VYM;
+				DEVELOPMENT_TEAM = 56WHEZKHH7;
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/empty_list/jelbrek/include\"";
 				INFOPLIST_FILE = empty_list/Info.plist;
@@ -481,7 +546,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H39QW49VYM;
+				DEVELOPMENT_TEAM = 56WHEZKHH7;
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/empty_list/jelbrek/include\"";
 				INFOPLIST_FILE = empty_list/Info.plist;

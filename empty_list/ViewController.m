@@ -29,6 +29,7 @@
 
 #include <ifaddrs.h>
 #include <arpa/inet.h>
+#import "SCLAlertView/SCLAlertView.h"
 
 mach_port_t taskforpidzero;
 uint64_t kernel_base, kslide;
@@ -86,7 +87,6 @@ uint64_t find_kernel_base() {
 }
 
 @interface ViewController ()
-
 @end
 
 @implementation ViewController
@@ -386,6 +386,34 @@ uint64_t find_kernel_base() {
     }
 
 }
+- (IBAction)systemInfoTapped:(id)sender {
+    SCLAlertView *sysAlertView = [[SCLAlertView alloc] init];
+    sysAlertView.backgroundType = SCLAlertViewBackgroundBlur;
+    [sysAlertView showInfo:self title:@"Device Info:" subTitle:@"Coming Soon" closeButtonTitle:@"Cancel" duration:0.0f];
+}
+- (IBAction)shareTheLove:(id)sender {
+    NSString *text = [NSString stringWithFormat:@"I am using rootlessJB by @jakeashacks! It's beautifully rootless!"];
+    
+    NSArray * itemsToShare = @[text];
+    
+    UIActivityViewController *controller = [[UIActivityViewController alloc]initWithActivityItems:itemsToShare applicationActivities:nil];
+    
+    // and present it
+    [self presentActivityController:controller];
+}
+
+- (void)presentActivityController:(UIActivityViewController *)controller {
+    
+    // for iPad: make the presentation a Popover
+    controller.modalPresentationStyle = UIModalPresentationPopover;
+    [self presentViewController:controller animated:YES completion:nil];
+    
+    UIPopoverPresentationController *popController = [controller popoverPresentationController];
+    popController.permittedArrowDirections = UIPopoverArrowDirectionAny;
+    popController.barButtonItem = self.navigationItem.rightBarButtonItem;
+    
+}
+
 - (IBAction)uninstall:(id)sender {
     taskforpidzero = run();
     kernel_base = find_kernel_base();
@@ -403,6 +431,8 @@ uint64_t find_kernel_base() {
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    self.logs.clipsToBounds = YES;
+    self.logs.layer.cornerRadius = 10.0; 
 }
 
 

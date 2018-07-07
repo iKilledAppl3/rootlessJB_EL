@@ -12,6 +12,8 @@
 @property (weak, nonatomic) IBOutlet UISwitch *tweaksSwitch;
 
 @property (weak, nonatomic) IBOutlet UITextView *logs;
+@property (strong, nonatomic) IBOutlet UIButton *jelbrekButton;
+@property (strong, nonatomic) IBOutlet UIButton *uninstallButton;
 
 @end
 
