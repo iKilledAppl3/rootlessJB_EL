@@ -25,7 +25,12 @@
 
 #include <sys/stat.h>
 #include <sys/spawn.h>
-#include <mach/mach.h>
+#import <sys/types.h>
+#import <sys/stat.h>
+#import <sys/utsname.h>
+#include <sys/utsname.h>
+#include <sys/types.h>
+#include <sys/sysctl.h>
 
 #include <ifaddrs.h>
 #include <arpa/inet.h>
