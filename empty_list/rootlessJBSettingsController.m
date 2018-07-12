@@ -19,38 +19,45 @@
 }
 
 
-- (IBAction)creditsButtonTapped:(id)sender {
-    NSString *creditsString = @"Exploit by Ian Beer Post exploitation is mostly from Electra, QiLin and a few things from my own Put together by @Jakeashacks :)";
+- (void)creditsCellTapped {
+    NSString *creditsString = @"Exploit by Ian Beer. \n Post exploitation is mostly from Electra, QiLin, and a few things from my own. \n Put together by @Jakeashacks :)";
     
-    SCLAlertView *creditsAlertView = [[SCLAlertView alloc] init];
-    creditsAlertView.backgroundType = SCLAlertViewBackgroundBlur;
-    [creditsAlertView showInfo:self title:@"Credits" subTitle:creditsString closeButtonTitle:@"OK" duration:0.0f];
+    UIAlertController *creditsAlertController = [UIAlertController alertControllerWithTitle:@"Credits" message:creditsString preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *alertAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil];
+    
+    [creditsAlertController addAction:alertAction];
+    
+    [self presentViewController:creditsAlertController animated:YES completion:nil];
     
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath  {
-    if (indexPath.row == 0) {
+    if (indexPath.section == 0 && indexPath.row == 0) {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://github.com/jakeajames/rootlessJB_EL"] options:@{} completionHandler:nil];
         
     }
     
-    if (indexPath.row == 1) {
+    if (indexPath.section == 0 && indexPath.row == 1) {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://twitter.com/Jakeashacks"] options:@{} completionHandler:nil];
     }
     
-    if (indexPath.row == 2) {
+    if (indexPath.section == 0 && indexPath.row == 2) {
+        [self creditsCellTapped];
+    }
+    
+    if (indexPath.section == 1 && indexPath.row == 0) {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://github.com/ikilledappl3/rootlessJB_EL"] options:@{} completionHandler:nil];
     }
     
-    if (indexPath.row == 3) {
+    if (indexPath.section == 1 && indexPath.row == 1) {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://twitter.com/iKilledAppl3"] options:@{} completionHandler:nil];
     }
     
-    if (indexPath.row == 4) {
+    if (indexPath.section == 2 && indexPath.row == 0) {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.icons8.com"] options:@{} completionHandler:nil];
     }
     
-    if (indexPath.row == 5) {
+    if (indexPath.section == 2 && indexPath.row == 1) {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://github.com/dogo/SCLAlertView"] options:@{} completionHandler:nil];
     }
     

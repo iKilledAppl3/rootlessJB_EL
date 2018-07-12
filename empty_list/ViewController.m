@@ -34,6 +34,8 @@
 mach_port_t taskforpidzero;
 uint64_t kernel_base, kslide;
 
+
+
 //Jonathan Seals: https://github.com/JonathanSeals/kernelversionhacker
 uint64_t find_kernel_base() {
 #define IMAGE_OFFSET 0x2000
@@ -91,6 +93,81 @@ uint64_t find_kernel_base() {
 
 @implementation ViewController
 
+//iOS software version detection :P
+//@iKilledAppl3 :P
+- (NSString*)softwareString {
+    return [[UIDevice currentDevice] systemVersion];
+}
+
+- (NSString*)softwareDection {
+    NSString *software = [self softwareString];
+    if ([software isEqualToString:@"11.2"]) return @"iOS 11.2";
+    if ([software isEqualToString:@"11.2.1"]) return @"iOS 11.2.1";
+    if ([software isEqualToString:@"11.2.2"]) return @"iOS 11.2.2";
+    if ([software isEqualToString:@"11.2.5"]) return @"iOS 11.2.5";
+    if ([software isEqualToString:@"11.2.6"]) return @"iOS 11.2.6";
+    if ([software isEqualToString:@"11.3"]) return @"iOS 11.3";
+    if ([software isEqualToString:@"11.3.1"]) return @"iOS 11.3.1";
+    return nil;
+}
+
+//hardware detection thanks to Yalu-X from MTAC :)
+/*https://github.com/MTAC-Research/Yalu-X/*/
+- (NSString*)hardwareString {
+    size_t size = 100;
+    char *hw_machine = malloc(size);
+    int name[] = {CTL_HW,HW_MACHINE};
+    sysctl(name, 2, hw_machine, &size, NULL, 0);
+    NSString *hardware = [NSString stringWithUTF8String:hw_machine];
+    free(hw_machine);
+    return hardware;
+}
+
+- (NSString*)hardwareDescription {
+    NSString *hardware = [self hardwareString];
+    
+    //extra arm64 hardware added and based on this list http://blakespot.com/ios_device_specifications_grid.html
+    //iPod touch arm64 hardware
+    if ([hardware isEqualToString:@"iPod7,1"]) return @"iPod touch 6";
+    
+    //iPad arm64 hardware
+    if ([hardware isEqualToString:@"iPad4,1"]) return @"iPad Air";
+    if ([hardware isEqualToString:@"iPad4,2"]) return @"iPad Air";
+    if ([hardware isEqualToString:@"iPad4,3"]) return @"iPad Air";
+    if ([hardware isEqualToString:@"iPad4,4"]) return @"iPad Mini 2";
+    if ([hardware isEqualToString:@"iPad4,5"]) return @"iPad Mini 2";
+    if ([hardware isEqualToString:@"iPad4,6"]) return @"iPad Mini 2";
+    if ([hardware isEqualToString:@"iPad5,3"]) return @"iPad Air 2";
+    if ([hardware isEqualToString:@"iPad5,4"]) return @"iPad Air 2";
+    if ([hardware isEqualToString:@"iPad4,7"]) return @"iPad Mini 3";
+    if ([hardware isEqualToString:@"iPad4,8"]) return @"iPad Mini 3";
+    if ([hardware isEqualToString:@"iPad4,9"]) return @"iPad Mini 3";
+    if ([hardware isEqualToString:@"iPad6,7"]) return @"iPad Pro";
+    if ([hardware isEqualToString:@"iPad6,8"]) return @"iPad Pro";
+    if ([hardware isEqualToString:@"iPad5,1"]) return @"iPad Mini 4";
+    if ([hardware isEqualToString:@"iPad5,2"]) return @"iPad Mini 4";
+    if ([hardware isEqualToString:@"iPad6,3"]) return @"iPad Pro 9.7";
+    if ([hardware isEqualToString:@"iPad6,4"]) return @"iPad Pro 9.7";
+    if ([hardware isEqualToString:@"iPad7,4"]) return @"iPad Pro 10.5";
+    
+    //iPhone arm64 hardware
+    if ([hardware isEqualToString:@"iPhone6,1"]) return @"iPhone 5s";
+    if ([hardware isEqualToString:@"iPhone6,2"]) return @"iPhone 5s";
+    if ([hardware isEqualToString:@"iPhone6,3"]) return @"iPhone 5s";
+    if ([hardware isEqualToString:@"iPhone7,1"]) return @"iPhone 6+";
+    if ([hardware isEqualToString:@"iPhone7,2"]) return @"iPhone 6";
+    if ([hardware isEqualToString:@"iPhone8,1"]) return @"iPhone 6s";
+    if ([hardware isEqualToString:@"iPhone8,2"]) return @"iPhone 6s+";
+    if ([hardware isEqualToString:@"iPhone8,4"]) return @"iPhone SE";
+    if ([hardware isEqualToString:@"iPhone9,1"]) return @"iPhone 7";
+    if ([hardware isEqualToString:@"iPhone9,2"]) return @"iPhone 7";
+    if ([hardware isEqualToString:@"iPhone9,3"]) return @"iPhone 7";
+    if ([hardware isEqualToString:@"iPhone9,4"]) return @"iPhone 7+";
+    if ([hardware isEqualToString:@"iPhone9,5"]) return @"iPhone 7+";
+    if ([hardware isEqualToString:@"iPhone9,6"]) return @"iPhone 7+";
+    if ([hardware isEqualToString:@"iPhone10,5"]) return @"iPhone X";
+    return nil;
+}
 
 //https://stackoverflow.com/questions/6807788/how-to-get-ip-address-of-iphone-programmatically
 - (NSString *)getIPAddress {
@@ -387,9 +464,15 @@ uint64_t find_kernel_base() {
 
 }
 - (IBAction)systemInfoTapped:(id)sender {
+    NSString *yeetWorld = [NSString stringWithFormat:@"Your device is an %@ ", [self hardwareDescription]];
+    NSString *deviceOSVersion = [NSString stringWithFormat:@"Running %@ ", [self softwareDection]];
+    NSString *getDeviceIP = [NSString stringWithFormat:@"\n And your IP Address is: %@", [self getIPAddress]];
+    NSArray *stringArray = [[NSArray alloc] initWithObjects:yeetWorld, deviceOSVersion, getDeviceIP, nil];
+    NSString *moreDeviceInfo = [stringArray componentsJoinedByString:@""];
+    
     SCLAlertView *sysAlertView = [[SCLAlertView alloc] init];
     sysAlertView.backgroundType = SCLAlertViewBackgroundBlur;
-    [sysAlertView showInfo:self title:@"Device Info:" subTitle:@"Coming Soon" closeButtonTitle:@"Cancel" duration:0.0f];
+    [sysAlertView showInfo:self title:@"Device Info:" subTitle:moreDeviceInfo closeButtonTitle:@"OK" duration:0.0f];
 }
 - (IBAction)shareTheLove:(id)sender {
     NSString *text = [NSString stringWithFormat:@"I am using rootlessJB by @jakeashacks! It's beautifully rootless!"];
